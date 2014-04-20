@@ -1,5 +1,5 @@
-cworklog
-========
+cworklog.com
+=============
 Contractor's Work Log Time Tracker
 Log your time, bill your clients with this open source tool.
 
