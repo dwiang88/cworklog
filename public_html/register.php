@@ -114,7 +114,7 @@ if (isset($_POST['username']) && isset($_POST['email']))
 
             $message->setSubject('Contractor\'s Work Log Registration');
             $message->setBody("Please verify your account by clicking the link below\r\n".
-                Site::cfg('base_url').'verify.php?code='.$verify_code.'&email='.urlencode($_POST['email']), 'text/html');
+                Site::cfg('base_url').'/verify.php?code='.$verify_code.'&email='.urlencode($_POST['email']), 'text/html');
              
             $message->setTo(array($_POST['email']));
         
