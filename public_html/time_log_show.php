@@ -346,7 +346,10 @@ timelog_setDuration = function(rowindex, rowid, dtStartTime){
    var dtEndTime = new Date(dtStartTime.getTime() + dur*60000);
    var stop_time_td = $('#stop_time_'+rowindex)[0];
    if (stop_time_td){
-     timelog_makeEditable(stop_time_td, dtEndTime.toString('MMM d, yyyy hh:mm:ss tt'), {saveonblur:true});
+     var dtEndStr = dtEndTime.toString('MMM d, yyyy hh:mm:ss tt');
+     //The 12am bug shows 00 instead of 12
+     dtEndStr = dtEndStr.replace(/ 00:/img, " 12:");
+     timelog_makeEditable(stop_time_td, dtEndStr, {saveonblur:true});
      return true;
    }else{
      alert('An error occurred, please contact support');
